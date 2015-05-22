@@ -276,7 +276,9 @@ module.exports = function(grunt){
         if (tasks.length) {
           grunt.log.ok('running ' + taskName + ' ');
           if (!nowrite) {
-            grunt.task.run(tasks);
+            for (var i = 0; i < tasks.length; i++) {
+              run('grunt ' + tasks[i] , '-> ' + tasks[i]);
+            }
           }
         }
       });
